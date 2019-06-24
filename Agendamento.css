@@ -1,0 +1,51 @@
+#Vida input{
+    height: 60px;
+}
+#Quadro h2{
+    position: absolute;
+    left: 20%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+}
+#Quadro {
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+}
+#Vida h3{
+    position: absolute;
+    left: 20%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+}
+#Vida{
+    position: absolute;
+    left: 48%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+}
+#Rexona{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#Rexona h3{
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+}
+#Notebook{
+    position: absolute;
+    left: 70%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+}
+#OdeioMinhaVida{
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%, -50%);
+}

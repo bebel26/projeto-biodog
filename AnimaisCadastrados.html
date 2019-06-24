@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title> Animais Cadastrados </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body>
+        <div id="Area">
+        <form  name="Form1" class="formulario" >
+            <h4>Nome do Animal </h4>
+            <input type="text" name="NomedoAnimal" value="Digite"><br>
+            <h4>Data de Nascimento do Animal </h4>
+             <input type="date" name="DataDeNascimento" value="__/__/____">
+            <h4>Raça</h4>
+             <input type="text" name="Raça" value="Digite">
+             <h4>Cor da Pelugem</h4>
+             <input type="text" name="Cor" value="Digite">   
+             <h4>Castrado</h4>    
+            <select>
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
+            </select>
+        </div>
+        <div id="Perimetro">
+            <form  name="Form2" class="form">
+                <h4> Restrição(Alergia)</h4>
+                <input type="text" name="Restrição" value="Digite">
+                <h4>Observação</h4>
+                <input type="text" name="Observação" value="Digite">
+                <h4> Validade das Vacinas</h4>
+                Cólera &nbsp; <input type="date" name="Observação" >
+                <br>
+                Febre Amarela &nbsp; <input type="date" name="Observação" >
+                <br>
+                Raiva &nbsp; <input type="date" name="Observação">
+                <br>
+                <br>
+                <div class="menu">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="InserirCarteirinha.html" > Inserir Carteirinha Completa </a> 
+            </div>
+            </form>
+        </div>
+        <div id="Altura">
+            <a href="Visualizarcarteirinha.html"> Visualizar Carteirinha</a>
+        </div>
+        <div id="Horizontal">
+        <h6>___________________________________________________________________________________________________________________________________________________________________________ </h6>
+        </div>
+        <div id="Vertical">
+                <input type="submit" value="Confirmar">
+        </div>
+        <div id="Diagonal">
+        <input type="file" value="Enviar foto do Animal">    
+        </div>
+    </body>
+</html>

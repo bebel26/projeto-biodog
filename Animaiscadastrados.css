@@ -1,0 +1,53 @@
+#Area{
+    position: absolute;
+    top: 7%;   
+    left: 40%;
+    transform: translate(-50%, 0);
+}
+
+.formulario{
+    position: absolute;
+    top: 30%;   
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#Perimetro{
+    position: absolute;
+    top: 7%;   
+    left: 69%;
+    transform: translate(-50%, 0);
+}
+.menu a {
+    border: 1px solid black;
+    margin-bottom: 50px;
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+    background-color: aqua
+  }
+#Altura{
+    position: absolute;
+    top: 62%;   
+    left: 70%;
+    transform: translate(-50%, 0);
+}
+#Horizontal{
+    position: absolute;
+    top: 72%;   
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+#Vertical{
+    position: absolute;
+    top: 85%;   
+    left: 70%;
+    transform: translate(-50%, 0);
+}
+#Diagonal{
+    position: absolute;
+    top: 40%;   
+    left: 15%;
+    transform: translate(-50%, 0);
+}
+  
