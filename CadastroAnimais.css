@@ -44,10 +44,24 @@
     left: 70%;
     transform: translate(-50%, 0);
 }
-#Diagonal{
-    position: absolute;
-    top: 40%;   
-    left: 15%;
-    transform: translate(-50%, 0);
+
+td
+{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    align-content: left;    
+
+}
+input
+{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    align-content: left; 
+}
+select
+{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    align-content: left;
 }
   
