@@ -5,20 +5,21 @@
      <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700">
      <link href="./vermais_files/css" rel="stylesheet">
      <link href="./vermais_files/css(1)" rel="stylesheet">
-     <link rel="stylesheet" href="estilo.css">
+     <link rel="stylesheet" href="estiloCamillie.css">
+     <link rel="stylesheet" href="cadastrodono.css">
  </head>
 <div class="header">
           <div class="linha">
               <header>
                   <div class="coluna col4">
-                      <img src="../logo-biodog-classicos-300x219-300x219" alt="BIODOG" border="0">
+                      <img src="imagens/logo_biodog.png alt="BIODOG" border="0">
                   </div>
                   <div class="coluna col8">
                       <nav>
                           <ul class="menu inline sem-marcador">
-                              <li><a href="file:///C:/Users/halip/Documents/Camillie/Gameshack-1/site/index.html">Menu</a></li>
-                              <li><a href="file:///C:/Users/halip/Documents/Camillie/Gameshack-1/site/empresas.html">Calendário</a></li>
-                              <li><a href="file:///C:/Users/halip/Documents/Camillie/Gameshack-1/site/JogosDA.html">Agenda</a></li>
+                              <li><a href="index.html">Menu</a></li>
+                              <li><a href="calendario.html">Calendário</a></li>
+                              <li><a href="agenda.html">Agenda</a></li>
                               <li><a href="vermais.html">Ver mais...</a></li>
                               <li><a href="index.html">Cadastro</a></li>
                           </ul>
@@ -32,120 +33,102 @@
 
  <body>
         
-  <h1><font face="Courier" align ="center" ><font color="Green"><b>Cadastro</b></font></font></h1> 
+  <h1><b>Cadastro</b></h1> 
 
 <!-- DADOS PESSOAIS-->
 <fieldset>
-    <legend><font size="5"><font face="Courier"><b>Dados Pessoais</b> </font></font></legend>
+    <legend><b>Dados Pessoais</b></legend>
  <table cellspacing="15">
     <tr>
     <td>
-    <font size="4"><font face="Courier"><label for="imagem"><b> Foto: </b></label></font></font>
-    </td align ="left">
-    <td>
+    <label for="imagem"><b> Foto: </b></label>
     <input type="file" name="imagem" >         
     </td>
     </tr>
   <tr>
    <td>
-    <font size ="4"><font face="Courier"><label for="nome"><b> Nome: </b></label><font></font>
-   </td>
-   <td align="left">
+    <label for="nome"><b> Nome: </b></label>
     <input type="text" name="email">
    </td>
    <td>
-        <font size ="4"><font face="Courier"><label for="sobrenome"><b>Sobrenome: </b> </label></font></font>
-   </td>
-   <td align="left">
+        <label for="sobrenome"><b>Sobrenome: </b> </label>
     <input type="text" name="sobrenome">
    </td>
   </tr>
   <tr>
    <td>
-    <font size ="4"><font face="Courier"><label><b> Nascimento:</b> </label></font></font>
-   </td>
-   <td align="left">
+    <label><b> Nascimento:</b> </label>
     <input type="text" name="dia" size="2" maxlength="2" value="dd"> 
    <input type="text" name="mes" size="2" maxlength="2" value="mm"> 
    <input type="text" name="ano" size="4" maxlength="4" value="aaaa">
    </td>
    <td>
-    <font size ="4"><font face="Courier"><label for="rg"><b>RG:</b> </label></font></font>
-   </td>
-   <td align="left">
+<label for="rg"><b>RG:</b> </label>
     <input type="text" name="rg" size="13" maxlength="13"> 
    </td>
   </tr>
   <tr>
    <td>
-    <font size ="4"><font face="Courier"><label><b>CPF:</b></label></font></font>
-   </td>
-   <td align="left">
+    <label><b>CPF:</b></label>
     <input type="text" name="cpf" size="9" maxlength="9"> - <input type="text" name="cpf2" size="2" maxlength="2">
    </td>
   </tr>
   <tr>
    <td>
-    <font size ="4"><font face="Courier"><label for="rua"><b>Rua:</b></label></font></font>
-   </td>
-   <td align="left">
+    <label for="rua"><b>Rua:</b></label>
     <input type="text" name="rua">
    </td>
    <td>
-    <font size ="4"><font face="Courier"><label for="numero"><b> Numero:</b></label></font></font>
-   </td>
-   <td align="left">
+<label for="numero"><b> Numero:</b></label>
     <input type="text" name="numero" size="5">
    </td>
   </tr>
   <tr>
    <td>
-    <font size ="4"><font face="Courier"><label for="bairro"><b> Bairro:</b> </label></font></font>
-   </td>
-   <td align="left">
+<label for="bairro"><b> Bairro:</b> </label>
     <input type="text" name="bairro">
    </td>
     <td>
-    <font size ="4"><font face="Courier"><label for="cep"><b>CEP:</b>  </label></font></font>
-    </td>
-    <td align="left">
+<label for="cep"><b>CEP:</b>  </label>
     <input type="text" name="cep" size="5" maxlength="5"> - <input type="text" name="cep2" size="3" maxlength="3">
     </td>
     </tr>
   <tr>
    <td>
-        <font size ="4"><font face="Courier"><label for="email"><b>E-mail:</b>  </label></font></font>
-   </td>
-   <td align="left">
+<label for="email"><b>E-mail:</b>  </label>
     <input type="text" name="email">
-   </td>
-   <td>
-        <font size ="4"><font face="Courier"><label for="cfemail"><b>Confirme seu email: </b> </label></font></font>
-   </td>
-   <td align="left">
-    <input type="text" name="cfemail">
    </td>
   </tr>
   <tr>
    <td>
-        <font size ="4"><font face="Courier"><label for="pass"><b>Senha:</b>  </label></font></font>
-   </td>
-   <td align="left">
+    <label for="pass"><b>Senha:</b>  </label>
     <input type="password" name="pass">
    </td>
    <td>
-    <font size ="4"><font face="Courier"><label for="passconfirm"><b>Confirme a senha:</b>  </label></font></font>
-   </td>
-   <td align="left">
+   <label for="passconfirm"><b>Confirme a senha:</b>  </label>
     <input type="password" name="passconfirm">
    </td>
+  </tr>
+  <tr>
+      <td>
+          <label for="addAnimal"><b>Adicionar Animal:</b> </label>
+          <select>
+            <option value="Escolha um animal">Escolha um animal</option>
+            <option value="Baby">Baby</option>
+            <option value="Todd">Todd</option>
+            <option value="Mingau">Mingau</option>
+            <option value="Guigo">Mingau</option>
+            <option value="Leco">Mingau</option>
+            <option value="Lia">Lia</option>
+          </select>
+      </td>
   </tr>
  </table>
 </fieldset>
 
 
-<input align ="center" type="submit">
-<input align ="center"type="reset" value="Limpar">
+<input  type="submit">
+<input type="reset" value="Limpar">
 
  </body>
 </html>
