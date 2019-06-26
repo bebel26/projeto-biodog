@@ -1,0 +1,32 @@
+h1
+{
+    font-size: 50px;
+    align-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: green;
+}
+legend
+{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+td
+{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    align-content: left;    
+
+}
+input
+{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    align-content: left; 
+}
+select
+{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    align-content: left;
+}
