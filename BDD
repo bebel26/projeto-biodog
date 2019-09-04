@@ -1,0 +1,106 @@
+CREATE DATABASE Bd_BioDog
+
+USE Bd_Vendas 
+
+CREATE TABLE Usuario (
+  idUsuario INTEGER   NOT NULL ,
+  Nome INTEGER    ,
+  Senha VARCHAR(45)    ,
+  tipo varchar(3) NOT NULL CHECK (tipo IN('ADM', 'DONO')),
+  PRIMARY KEY(idUsuario)
+)
+
+
+
+
+CREATE TABLE Animal (
+  idAnimal INTEGER   NOT NULL ,
+  Especie VARCHAR(45)    ,
+  Raca VARCHAR(45)    ,
+  DataNascimento DATE    ,
+  Castracao bit NOT NULL ,
+  CorPelagem VARCHAR(20)    ,
+  Alergia VARCHAR(255)    ,
+  Obs VARCHAR(255)    ,
+  Validade_Colera DATE    ,
+  Validade_FA DATE    ,
+  Validade_Raiva DATE      ,
+PRIMARY KEY(idAnimal)
+
+)
+
+
+CREATE TABLE Dono (
+  CPF INTEGER   NOT NULL ,
+  Usuario_idUsuario INTEGER   NOT NULL ,
+  Sobrenome VARCHAR    ,
+  RG VARCHAR(45)    ,
+  Rua VARCHAR(255)    ,
+  Bairro VARCHAR(45)    ,
+  Numero INTEGER    ,
+  Email VARCHAR(100)    ,
+  Senha VARCHAR(20)    ,
+  CEP VARCHAR      ,
+PRIMARY KEY(CPF)  ,
+  FOREIGN KEY(Usuario_idUsuario)
+    REFERENCES Usuario(idUsuario));
+
+
+CREATE INDEX Dono_FKIndex1 ON Dono (Usuario_idUsuario);
+
+
+CREATE INDEX IFK_Rel_08 ON Dono (Usuario_idUsuario);
+
+
+CREATE TABLE Atendimento (
+  IdAtendimento INTEGER   NOT NULL ,
+  Animal_idAnimal INTEGER   NOT NULL ,
+  Animal TEXT    ,
+  Dono_Autorizado TEXT    ,
+  LevaTraz bit    ,
+  Obs TEXT    ,
+  DataAgendamento DATE    ,
+  Horario TIME    ,
+  Servico CHAR      ,
+PRIMARY KEY(IdAtendimento)  ,
+  FOREIGN KEY(Animal_idAnimal)
+    REFERENCES Animal(idAnimal));
+
+
+CREATE INDEX Atendimento_FKIndex1 ON Atendimento (Animal_idAnimal);
+
+
+CREATE INDEX IFK_Rel_07 ON Atendimento (Animal_idAnimal);
+
+
+CREATE TABLE ANIMAL_has_DONO (
+  Dono_CPF INTEGER   NOT NULL ,
+  Animal_idAnimal INTEGER   NOT NULL   ,
+PRIMARY KEY(Dono_CPF, Animal_idAnimal)    ,
+  FOREIGN KEY(Animal_idAnimal)
+    REFERENCES Animal(idAnimal),
+  FOREIGN KEY(Dono_CPF)
+    REFERENCES Dono(CPF));
+
+
+CREATE INDEX ANIMAL_has_DONO_FKIndex1 ON ANIMAL_has_DONO (Animal_idAnimal);
+CREATE INDEX ANIMAL_has_DONO_FKIndex2 ON ANIMAL_has_DONO (Dono_CPF);
+
+
+CREATE INDEX IFK_Rel_03 ON ANIMAL_has_DONO (Animal_idAnimal);
+CREATE INDEX IFK_Rel_04 ON ANIMAL_has_DONO (Dono_CPF);
+
+CREATE TABLE Servico (
+  idServico INTEGER   NOT NULL ,
+ Atendimento_IdAtendimento INTEGER   NOT NULL   ,
+PRIMARY KEY(idServico)    ,
+  FOREIGN KEY(Atendimento_IdAtendimento)
+    REFERENCES Atendimento(idAtendimento),
+ Nome INTEGER NOT NULL,
+Preco numeric CONSTRAINT preco_positivo CHECK (preco > 0) );
+
+
+CREATE INDEX index_Servico ON Servico ( Atendimento_IdAtendimento);
+
+CREATE INDEX IFK_Rel_11 ON Servico ( Atendimento_IdAtendimento)
+)
