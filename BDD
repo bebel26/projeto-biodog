@@ -115,7 +115,7 @@ CREATE INDEX ANIMAL_has_DONO_FKIndex2 ON ANIMAL_has_DONO (Dono_CPF);
 
 CREATE INDEX IFK_Rel_03 ON ANIMAL_has_DONO (Animal_idAnimal);
 CREATE INDEX IFK_Rel_04 ON ANIMAL_has_DONO (Dono_CPF);
-
+	
 CREATE TABLE Servico 
 (
   idServico INTEGER   NOT NULL ,
@@ -123,10 +123,15 @@ CREATE TABLE Servico
 PRIMARY KEY(idServico)    ,
   FOREIGN KEY(Atendimento_IdAtendimento)
     REFERENCES Atendimento(idAtendimento),
- Nome INTEGER NOT NULL,
-Preco numeric CONSTRAINT preco_positivo CHECK (preco > 0) );
+ Nome VARCHAR(20) NOT NULL,
+Preco DOUBLE
+);
 
 
 CREATE INDEX index_Servico ON Servico ( Atendimento_IdAtendimento);
 CREATE INDEX IFK_Rel_11 ON Servico ( Atendimento_IdAtendimento)
 )
+
+	INSERT INTO Servico(idServico) values (12547)
+	INSERT INTO Servico(Nome) values ('Banho e Tosa')
+	INSERT INTO Servico(Preco) values (2578)
