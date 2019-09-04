@@ -2,18 +2,21 @@ CREATE DATABASE Bd_BioDog
 
 USE Bd_Vendas 
 
-CREATE TABLE Usuario (
+CREATE TABLE Usuario 
+(
   idUsuario INTEGER   NOT NULL ,
   Nome INTEGER    ,
   Senha VARCHAR(45)    ,
   tipo varchar(3) NOT NULL CHECK (tipo IN('ADM', 'DONO')),
   PRIMARY KEY(idUsuario)
 )
+	INSERT INTO Usuario(IdUsuario) values (2578)
+	INSERT INTO Usuario(Nome) values ('Clara')
+	INSERT INTO Usuario(Senha) values ('****')
+	INSERT INTO Usuario(Tipo) values ('DONO')
 
-
-
-
-CREATE TABLE Animal (
+CREATE TABLE Animal 
+(
   idAnimal INTEGER   NOT NULL ,
   Especie VARCHAR(45)    ,
   Raca VARCHAR(45)    ,
@@ -26,11 +29,21 @@ CREATE TABLE Animal (
   Validade_FA DATE    ,
   Validade_Raiva DATE      ,
 PRIMARY KEY(idAnimal)
-
 )
+	INSERT INTO Animal(idAnimal) values (5478)
+	INSERT INTO Animal(Especie) values ('Cachorro')
+	INSERT INTO Animal(Raca) values ('Pitbull')
+	INSERT INTO Animal(DataNascimento) values ('12/01/2009')
+	INSERT INTO Animal(Castracao) values (1)
+	INSERT INTO Animal(CorPelagem) values ('Preta')
+	INSERT INTO Animal(Alergia) values ('Não')
+	INSERT INTO Animal(Validade_Colera) values ('20/01/2020')
+	INSERT INTO Animal(Validade_FA) values ('15/05/2025')
+	INSERT INTO Animal(Validade_Raiva) values ('25/09/2021')
 
 
-CREATE TABLE Dono (
+CREATE TABLE Dono 
+(
   CPF INTEGER   NOT NULL ,
   Usuario_idUsuario INTEGER   NOT NULL ,
   Sobrenome VARCHAR    ,
@@ -45,14 +58,21 @@ PRIMARY KEY(CPF)  ,
   FOREIGN KEY(Usuario_idUsuario)
     REFERENCES Usuario(idUsuario));
 
-
 CREATE INDEX Dono_FKIndex1 ON Dono (Usuario_idUsuario);
-
-
 CREATE INDEX IFK_Rel_08 ON Dono (Usuario_idUsuario);
 
+	INSERT INTO Dono(CPF) values (5478258745)
+	INSERT INTO Dono(Sobrenome) values ('Silva')
+	INSERT INTO Dono(RG) values (2578485)
+	INSERT INTO Dono(Rua) values ('R. São José')
+	INSERT INTO Dono(Bairro) values ('Vila Guilhermina')
+	INSERT INTO Dono(Numero) values (52)
+	INSERT INTO Dono(Email) values ('silva123@gmail.com')
+	INSERT INTO Dono(Senha) values ('*****')
+	INSERT INTO Dono(CEP) values ('25874585')
 
-CREATE TABLE Atendimento (
+CREATE TABLE Atendimento 
+(
   IdAtendimento INTEGER   NOT NULL ,
   Animal_idAnimal INTEGER   NOT NULL ,
   Animal TEXT    ,
@@ -68,12 +88,10 @@ PRIMARY KEY(IdAtendimento)  ,
 
 
 CREATE INDEX Atendimento_FKIndex1 ON Atendimento (Animal_idAnimal);
-
-
 CREATE INDEX IFK_Rel_07 ON Atendimento (Animal_idAnimal);
 
-
-CREATE TABLE ANIMAL_has_DONO (
+CREATE TABLE ANIMAL_has_DONO 
+(
   Dono_CPF INTEGER   NOT NULL ,
   Animal_idAnimal INTEGER   NOT NULL   ,
 PRIMARY KEY(Dono_CPF, Animal_idAnimal)    ,
@@ -90,7 +108,8 @@ CREATE INDEX ANIMAL_has_DONO_FKIndex2 ON ANIMAL_has_DONO (Dono_CPF);
 CREATE INDEX IFK_Rel_03 ON ANIMAL_has_DONO (Animal_idAnimal);
 CREATE INDEX IFK_Rel_04 ON ANIMAL_has_DONO (Dono_CPF);
 
-CREATE TABLE Servico (
+CREATE TABLE Servico 
+(
   idServico INTEGER   NOT NULL ,
  Atendimento_IdAtendimento INTEGER   NOT NULL   ,
 PRIMARY KEY(idServico)    ,
@@ -101,6 +120,5 @@ Preco numeric CONSTRAINT preco_positivo CHECK (preco > 0) );
 
 
 CREATE INDEX index_Servico ON Servico ( Atendimento_IdAtendimento);
-
 CREATE INDEX IFK_Rel_11 ON Servico ( Atendimento_IdAtendimento)
 )
