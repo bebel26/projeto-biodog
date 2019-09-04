@@ -90,6 +90,14 @@ PRIMARY KEY(IdAtendimento)  ,
 CREATE INDEX Atendimento_FKIndex1 ON Atendimento (Animal_idAnimal);
 CREATE INDEX IFK_Rel_07 ON Atendimento (Animal_idAnimal);
 
+	INSERT INTO Atendimento(IdAtendimento) values (545)
+	INSERT INTO Atendimento(Animal) values ('Cachorro')
+	INSERT INTO Atendimento(Dono_Autorizado) values ('Clara')
+	INSERT INTO Atendimento(LevaTraz) values (0)
+	INSERT INTO Atendimento(DataAgendamento) values ('20/09/2019')
+	INSERT INTO Atendimento(Horario) values ('15hrs')
+	INSERT INTO Atendimento(Servico) values ('banho')
+
 CREATE TABLE ANIMAL_has_DONO 
 (
   Dono_CPF INTEGER   NOT NULL ,
