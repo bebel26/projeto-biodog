@@ -28,17 +28,17 @@ CREATE TABLE IF NOT EXISTS `BioDog`.`Usuario` (
   PRIMARY KEY (`idUsuario`))
 ENGINE = InnoDB;
 
-	INSERT INTO Usuario(IdUsuario) values (1102);
+	INSERT INTO Usuario(IdUsuario) values (null);
 	INSERT INTO Usuario(Nome) values ('Clara');
 	INSERT INTO Usuario(Senha) values ('****');
 	INSERT INTO Usuario(Tipo) values ('DONO');
 
-	INSERT INTO Usuario(IdUsuario) values (158);
+	INSERT INTO Usuario(IdUsuario) values (null);
 	INSERT INTO Usuario(Nome) values ('Flávia');
 	INSERT INTO Usuario(Senha) values ('****');
 	INSERT INTO Usuario(Tipo) values ('DONO');
     
-	INSERT INTO Usuario(IdUsuario) values (250);
+	INSERT INTO Usuario(IdUsuario) values (null);
 	INSERT INTO Usuario(Nome) values ('Joana');
 	INSERT INTO Usuario(Senha) values ('****');
 	INSERT INTO Usuario(Tipo) values ('DONO');
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `BioDog`.`Animal` (
   PRIMARY KEY (`idAnimal`))
 ENGINE = InnoDB;
 
-	INSERT INTO Animal(idAnimal) values (45);
+	INSERT INTO Animal(idAnimal) values (null);
 	INSERT INTO Animal(Especie) values ('Cachorro');
 	INSERT INTO Animal(Raca) values ('Pitbull');
 	INSERT INTO Animal(DataNascimento) values ('12/01/2009');
@@ -71,7 +71,7 @@ ENGINE = InnoDB;
 	INSERT INTO Animal(Validade_FA) values ('15/05/2025');
 	INSERT INTO Animal(Validade_Raiva) values ('25/09/2021');
     
-	INSERT INTO Animal(idAnimal) values (85);
+	INSERT INTO Animal(idAnimal) values (null);
 	INSERT INTO Animal(Especie) values ('Gato');
 	INSERT INTO Animal(Raca) values ('Pitbull');
 	INSERT INTO Animal(DataNascimento) values ('20/02/2010');
@@ -82,7 +82,7 @@ ENGINE = InnoDB;
 	INSERT INTO Animal(Validade_FA) values ('15/01/2025');
 	INSERT INTO Animal(Validade_Raiva) values ('16/09/2021');
     
-	INSERT INTO Animal(idAnimal) values (95);
+	INSERT INTO Animal(idAnimal) values (null);
 	INSERT INTO Animal(Especie) values ('Cachorro');
 	INSERT INTO Animal(Raca) values ('Pinscher');
 	INSERT INTO Animal(DataNascimento) values ('26/01/2008');
