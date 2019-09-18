@@ -8,13 +8,10 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema BioDog
--- -----------------------------------------------------
-
 -- -----------------------------------------------------
 -- Schema BioDog
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `BioDog` DEFAULT CHARACTER SET utf8 ;
+CREATE DATABASE IF NOT EXISTS `BioDog` DEFAULT CHARACTER SET utf8 ;
 USE `BioDog` ;
 
 -- -----------------------------------------------------
@@ -25,28 +22,23 @@ CREATE TABLE IF NOT EXISTS `BioDog`.`Usuario` (
   `Nome` VARCHAR(45) NOT NULL,
   `Senha` CHAR(64) NOT NULL,
   `Tipo` ENUM('Dono', 'ADM') NOT NULL,
-  PRIMARY KEY (`idUsuario`))
+  PRIMARY KEY (`idUsuario`)
+)
 ENGINE = InnoDB;
 
-	INSERT INTO Usuario(IdUsuario) values (null);
-	INSERT INTO Usuario(Nome) values ('Clara');
-	INSERT INTO Usuario(Senha) values ('****');
-	INSERT INTO Usuario(Tipo) values ('DONO');
+INSERT INTO Usuario(IdUsuario, Nome, Senha, Tipo) values (null, 'Clara', '****', 'DONO');
 
-	INSERT INTO Usuario(IdUsuario) values (null);
-	INSERT INTO Usuario(Nome) values ('Flávia');
-	INSERT INTO Usuario(Senha) values ('****');
-	INSERT INTO Usuario(Tipo) values ('DONO');
-    
-	INSERT INTO Usuario(IdUsuario) values (null);
-	INSERT INTO Usuario(Nome) values ('Joana');
-	INSERT INTO Usuario(Senha) values ('****');
-	INSERT INTO Usuario(Tipo) values ('DONO');
+INSERT INTO Usuario(IdUsuario, Nome, Senha, Tipo) values (null, 'Flávia', '****', 'DONO');
+   
+INSERT INTO Usuario(IdUsuario, Nome, Senha, Tipo) values (null, 'Joana', '*****', 'ADM');
+   
+    SELECT Nome,Senha, Tipo FROM Usuario;
 -- -----------------------------------------------------
 -- Table `BioDog`.`Animal`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BioDog`.`Animal` (
   `idAnimal` INT NOT NULL AUTO_INCREMENT,
+  `img` VARCHAR(30) NOT NULL,
   `Especie` VARCHAR(45) NOT NULL,
   `Raca` VARCHAR(45) NOT NULL,
   `DataNascimento` DATE NOT NULL,
@@ -60,43 +52,20 @@ CREATE TABLE IF NOT EXISTS `BioDog`.`Animal` (
   PRIMARY KEY (`idAnimal`))
 ENGINE = InnoDB;
 
-	INSERT INTO Animal(idAnimal) values (null);
-	INSERT INTO Animal(Especie) values ('Cachorro');
-	INSERT INTO Animal(Raca) values ('Pitbull');
-	INSERT INTO Animal(DataNascimento) values ('12/01/2009');
-	INSERT INTO Animal(Castracao) values (1);
-	INSERT INTO Animal(CorPelagem) values ('Preta');
-	INSERT INTO Animal(Alergia) values ('Não');
-	INSERT INTO Animal(Validade_Colera) values ('20/01/2020');
-	INSERT INTO Animal(Validade_FA) values ('15/05/2025');
-	INSERT INTO Animal(Validade_Raiva) values ('25/09/2021');
-    
-	INSERT INTO Animal(idAnimal) values (null);
-	INSERT INTO Animal(Especie) values ('Gato');
-	INSERT INTO Animal(Raca) values ('Pitbull');
-	INSERT INTO Animal(DataNascimento) values ('20/02/2010');
-	INSERT INTO Animal(Castracao) values (1);
-	INSERT INTO Animal(CorPelagem) values ('Branca');
-	INSERT INTO Animal(Alergia) values ('Não');
-	INSERT INTO Animal(Validade_Colera) values ('15/01/2020');
-	INSERT INTO Animal(Validade_FA) values ('15/01/2025');
-	INSERT INTO Animal(Validade_Raiva) values ('16/09/2021');
-    
-	INSERT INTO Animal(idAnimal) values (null);
-	INSERT INTO Animal(Especie) values ('Cachorro');
-	INSERT INTO Animal(Raca) values ('Pinscher');
-	INSERT INTO Animal(DataNascimento) values ('26/01/2008');
-	INSERT INTO Animal(Castracao) values (1);
-	INSERT INTO Animal(CorPelagem) values ('Castanha');
-	INSERT INTO Animal(Alergia) values ('Não');
-	INSERT INTO Animal(Validade_Colera) values ('13/02/2020');
-	INSERT INTO Animal(Validade_FA) values ('20/04/2023');
-	INSERT INTO Animal(Validade_Raiva) values ('10/09/2021');
+INSERT INTO Animal(idAnimal,img, Especie, Raca, DataNascimento, Castracao, CorPelagem, Alergia, Validade_Colera, Validade_FA, Validade_Raiva) values (null, 'img.pp','Cachorro', 'Pitbull', '12/01/2009', 1, 'Preta', 'Não', '20/01/2020', '15/05/2025', '25/09/2021');
+   
+INSERT INTO Animal(idAnimal,img, Especie, Raca, DataNascimento, Castracao, CorPelagem, Alergia, Validade_Colera, Validade_FA, Validade_Raiva) values (null, 'img.p','Gato', 'Pitbull','20/02/2010',1,'Branca','Não', '15/01/2020', '15/01/2025','16/09/2021');
+   
+INSERT INTO Animal(idAnimal,img, Especie, Raca, DataNascimento, Castracao, CorPelagem, Alergia, Validade_Colera, Validade_FA, Validade_Raiva) values (null,'img.pppp', 'Cachorro','Pinscher','26/01/2008',1,'Castanha','Não','13/02/2020','20/04/2023','10/09/2021');
+   
+    SELECT img, Especie, Raca, DataNascimento, Castracao, CorPelagem, Alergia, Validade_Colera, Validade_FA, Validade_Raiva FROM Animal;
+   
 -- -----------------------------------------------------
 -- Table `BioDog`.`Dono`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BioDog`.`Dono` (
-  `CPF` INT NOT NULL,
+  `CPF` VARCHAR(11) NOT NULL,
+  `img` VARCHAR(30),
   `Sobrenome` VARCHAR(45) NOT NULL,
   `RG` INT NOT NULL,
   `Rua` VARCHAR(45) NOT NULL,
@@ -110,40 +79,27 @@ CREATE TABLE IF NOT EXISTS `BioDog`.`Dono` (
   INDEX `fk_Dono_Usuario_idx` (`Usuario_idUsuario` ASC),
   CONSTRAINT `fk_Dono_Usuario`
     FOREIGN KEY (`Usuario_idUsuario`)
-    REFERENCES `BioDog`.`Usuario` (`idUsuario`)
+    REFERENCES `BioDog`.`Dono` (`CPF`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-	INSERT INTO Dono(CPF) values (5478258745);
-	INSERT INTO Dono(Sobrenome) values ('Silva');
-	INSERT INTO Dono(RG) values (2578485);
-	INSERT INTO Dono(Rua) values ('R. São José');
-	INSERT INTO Dono(Bairro) values ('Vila Guilhermina');
-	INSERT INTO Dono(Numero) values (52);
-	INSERT INTO Dono(Email) values ('silva123@gmail.com');
-	INSERT INTO Dono(Senha) values ('*****');
-	INSERT INTO Dono(CEP) values ('25874585');
-    
-	INSERT INTO Dono(CPF) values (8569458745);
-	INSERT INTO Dono(Sobrenome) values ('Vieira');
-	INSERT INTO Dono(RG) values (285479487);
-	INSERT INTO Dono(Rua) values ('R. São João');
-	INSERT INTO Dono(Bairro) values ('Vila Matilde');
-	INSERT INTO Dono(Numero) values (25);
-	INSERT INTO Dono(Email) values ('vieira123@gmail.com');
-	INSERT INTO Dono(Senha) values ('*****');
-	INSERT INTO Dono(CEP) values ('30325874');
-    
-	INSERT INTO Dono(CPF) values (458745958);
-	INSERT INTO Dono(Sobrenome) values ('Santos');
-	INSERT INTO Dono(RG) values (2741395);
-	INSERT INTO Dono(Rua) values ('R. São Gois');
-	INSERT INTO Dono(Bairro) values ('Tucuruvi');
-	INSERT INTO Dono(Numero) values (15);
-	INSERT INTO Dono(Email) values ('santos123@gmail.com');
-	INSERT INTO Dono(Senha) values ('*****');
-	INSERT INTO Dono(CEP) values ('10258745');
+INSERT INTO Dono(CPF, img,Sobrenome, RG, Rua, Bairro, Numero, Email, Senha,CEP) values ('5478258745','img.4565', 'Silva', 2578485, 'R. São José', 'Vila Guilhermina', 52, 'silva123@gmail.com', '*****','25874585');
+   
+INSERT INTO Dono(CPF, Sobrenome, RG, Rua, Bairro, Numero, Email, Senha,CEP) values ('8569458745','Vieira', 285479487, 'R. São João', 'Vila Matilde', 25, 'vieira123@gmail.com', '*****', '30325874');
+   
+INSERT INTO Dono(CPF, Sobrenome, RG, Rua, Bairro, Numero, Email, Senha,CEP) values ('458745958', 'Santos', 2741395, 'R. São Gois', 'Tucuruvi', 15, 'santos123@gmail.com', '*****', '10258745'  );
+   
+    SELECT CPF, img,Sobrenome, RG, Rua, Bairro, Numero, Email, Senha,CEP FROM Dono;
+   
+SELECT *
+FROM Animal /* Tabela da esquerda */
+LEFT JOIN idAnimal /* Tabela da direita */
+ON idAnimal = idAnimal;SELECT *
+FROM Dono /* Tabela da esquerda */
+LEFT JOIN CPF /* Tabela da direita */
+ON CPF = CPF;
+
 
 
 -- -----------------------------------------------------
@@ -157,37 +113,22 @@ CREATE TABLE IF NOT EXISTS `BioDog`.`Atendimento` (
   `Horario` DATETIME(4) NOT NULL,
   `Animal_idAnimal` INT NOT NULL,
   PRIMARY KEY (`idAtendimento`),
-  INDEX `fk_Atendimento_Animal1_idx` (`Animal_idAnimal` ASC) VISIBLE,
+  INDEX `fk_Atendimento_Animal1_idx` (`Animal_idAnimal` ASC),
   CONSTRAINT `fk_Atendimento_Animal1`
     FOREIGN KEY (`Animal_idAnimal`)
-    REFERENCES `BioDog`.`Animal` (`idAnimal`)
+    REFERENCES `BioDog`.`Atendimento` (`idAtendimento`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-	INSERT INTO Atendimento(IdAtendimento) values (45);
-	INSERT INTO Atendimento(Animal) values ('Cachorro');
-	INSERT INTO Atendimento(Dono_Autorizado) values ('Clara');
-	INSERT INTO Atendimento(LevaTraz) values (0);
-	INSERT INTO Atendimento(DataAgendamento) values ('20/09/2019');
-	INSERT INTO Atendimento(Horario) values ('15hrs');
-	INSERT INTO Atendimento(Servico) values ('banho');
-    
-	INSERT INTO Atendimento(IdAtendimento) values (85);
-	INSERT INTO Atendimento(Animal) values ('Gato');
-	INSERT INTO Atendimento(Dono_Autorizado) values ('Flávia');
-	INSERT INTO Atendimento(LevaTraz) values (1);
-	INSERT INTO Atendimento(DataAgendamento) values ('10/10/2019');
-	INSERT INTO Atendimento(Horario) values ('12hrs');
-	INSERT INTO Atendimento(Servico) values ('banho');
-    
-	INSERT INTO Atendimento(IdAtendimento) values (95);
-	INSERT INTO Atendimento(Animal) values ('Cachorro');
-	INSERT INTO Atendimento(Dono_Autorizado) values ('Joana');
-	INSERT INTO Atendimento(LevaTraz) values (0);
-	INSERT INTO Atendimento(DataAgendamento) values ('09/10/2019');
-	INSERT INTO Atendimento(Horario) values ('14hrs');
-	INSERT INTO Atendimento(Servico) values ('banho e tosa');
+INSERT INTO Atendimento(IdAtendimento, Animal, Dono_Autorizado, LevaTraz, DataAgendamento, Horario, Servico) values (45, 'Cachorro', 'Clara', 0, '20/09/2019', '15hrs', 'banho');
+   
+INSERT INTO Atendimento(IdAtendimento, Animal, Dono_Autorizado, LevaTraz, DataAgendamento, Horario, Servico) values (85, 'Gato', 'Flávia', 1, '10/10/2019', '12hrs', 'banho');
+   
+INSERT INTO Atendimento(IdAtendimento, Animal, Dono_Autorizado, LevaTraz, DataAgendamento, Horario, Servico) values (95, 'Cachorro', 'Joana', 0, '09/10/2019', '14hrs', 'banho e tosa');
+   
+    SELECT  Animal, Dono_Autorizado, LevaTraz, DataAgendamento, Horario, Servico FROM Atendimento;
+   
 -- -----------------------------------------------------
 -- Table `BioDog`.`Dono_has_Animal`
 -- -----------------------------------------------------
@@ -223,23 +164,29 @@ CREATE TABLE IF NOT EXISTS `BioDog`.`Servico` (
   INDEX `fk_Servico_Atendimento1_idx` (`Atendimento_idAtendimento` ASC),
   CONSTRAINT `fk_Servico_Atendimento1`
     FOREIGN KEY (`Atendimento_idAtendimento`)
-    REFERENCES `BioDog`.`Atendimento` (`idAtendimento`)
+    REFERENCES `BioDog`.`Servico` (`idServico`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-	INSERT INTO Servico(idServico) values (12);
-	INSERT INTO Servico(Nome) values ('Banho');
-	INSERT INTO Servico(Preco) values (10);
+INSERT INTO Servico(idServico,  Nome, Preco, Descricao) values (12, 'Banho', 10, 'é um serviço que ....');
 
-	INSERT INTO Servico(idServico) values (13);
-	INSERT INTO Servico(Nome) values ('Banho');
-	INSERT INTO Servico(Preco) values (10);
-    
-	INSERT INTO Servico(idServico) values (14);
-	INSERT INTO Servico(Nome) values ('Banho e Tosa');
-	INSERT INTO Servico(Preco) values (20);
-    
+INSERT INTO Servico(idServico,  Nome, Preco, Descricao) values (13, 'Banho', 10, 'é um serviço que ....');
+   
+INSERT INTO Servico(idServico,  Nome, Preco, Descricao) values (14, 'Banho e Tosa', 20, 'é um serviço que ....');
+   
+    SELECT  Nome, Preco, Descricao FROM Servico;
+   
+    SELECT *
+FROM Atendimento /* Tabela da esquerda */
+LEFT JOIN idAtendimento /* Tabela da direita */
+ON idAtendimento = idAtendimento;SELECT *
+FROM Servico /* Tabela da esquerda */
+LEFT JOIN idServico /* Tabela da direita */
+ON idServico = idServico ;
+   
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
