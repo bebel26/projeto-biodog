@@ -9,39 +9,46 @@
     <link href="./Animais Cadastrados_files/css(1)" rel="stylesheet">
     <link rel="stylesheet" href="estiloCamillie.css">
     <link rel="stylesheet" href="CadastroAnimais.css">
+    <link rel="stylesheet" href="cadastrodono.css">
+
+
 </head>
     <body class="center">
         <div class="header">
             <div class="linha">
-                <header>
-                    <div class="coluna col2">
-                        <img src="imagens/logo_biodog.png" alt="BIODOG" border="0">
-                    </div>
-                    <div class="coluna col8">
-                        <nav>
-                            <ul class="menu inline sem-marcador">
-                                <li><a href="menu.html">Menu</a></li>                             
-                                <li><a href="cadastrodono.html">Cadastrar Dono</a></li>
-                                 <li><a href="CadastroAnimais.html">Cadastrar Animal</a></li>
-                                <li><a href="Agendamento.html">Agendamento</a></li>
-                                <li><a href="calendario_cliente.html">Calendário</a></li>
-                                <li><a href="precos.html">Tabela de Preços</a></li>
-                                <li><a href="login_cliente.html">Login</a></li>
+                <div class="header">
+          <div class="linha">
+              <header>
+                  <div class="coluna col2">
+                      <img src="imagens/logo_biodog.png" alt= "BIODOG" border="0">
+                  </div>
+                  <div class="coluna col10">
+                      <nav>
+                          <ul class="menu inline sem-marcador">
+                              <li><a href="menu.html">Menu</a></li>
+                              <li><a href="login_cliente.html">Login</a></li>
+                              <li><a href="precos.html">Tabela de Preços</a></li>
+                              <li><a href="Agendamento.html">Agendamento</a></li>
+                              <li><a href="calendariocliente.html">Calendário</a></li>
                             </ul>
-                        </nav>
-                    </div>
-                </header>
+                      </nav>
+                  </div>
+              </header>
             </div>
         </div>
+                <br>
+                <br>
     <fieldset>
         <table>
+            <legend><b>Dados do Animal</b></legend>
         <table cellspacing="15">
         <div id="Area">
-        <tr>
-                <div id="Diagonal">
-                        <input type="file" value="Enviar foto do Animal">    
-                        </div> 
+
+
         <td>
+            <label for="imagem"><b> Imagem do Animal: </b></label>
+            <input type="file" name="imagem" >
+
             <h4>Nome do Animal </h4>
             <input type="text" name="NomedoAnimal" value="Digite"><br>
         </td>    
@@ -86,12 +93,14 @@
                 <h4>Observação</h4>
                 <input type="text" name="Observação" value="Digite">
             </td>
-            <td><input type="submit" value="Confirmar"></td>
+
         </tr>
         
         <tr1>
-        <td1>
-                <h4> Validade das Vacinas</h4>
+
+        <td>
+
+            <h3><b>Validade das Vacinas:</b> </h3>
                 Cólera &nbsp; <input type="date" name="Observação" >
                 <br>
                 Febre Amarela &nbsp; <input type="date" name="Observação" >
@@ -99,18 +108,21 @@
                 Raiva &nbsp; <input type="date" name="Observação">
                 <br>
                 <br>
-                <div class="menu">
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="InserirCarteirinha.html" > Inserir Carteirinha Completa </a> 
-        
-            <a href="Visualizarcarteirinha.html"> Visualizar Carteirinha</a>
+            <td>
+            <div id="Diagonal">
+                        <label for="imagem"><b>Carteirinha completa:</b></label>
+                    <input type="file" name="imagem" >
+            </td>
         </div>
        
  </td1>
             </tr1>
-        </div>
-        <div id="Vertical">             
-            
-        </div>           
+
+            <tr>
+                <td><input type="submit" value="Confirmar" align="center"></td>
+            </tr>
+
+
     </table>
 </table>
 </fieldset>
@@ -134,4 +146,3 @@
 </div>
  </body>
   </html> 
-
