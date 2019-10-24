@@ -2,14 +2,16 @@
 <!-- saved from url=(0072)file:///C:/Users/halip/Documents/Camillie/Gameshack-1/site/empresas.html -->
 <html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title> Animais Cadastrados</title>
+    <title>BioDog - Login</title>
     <link rel="stylesheet" href="normalyze.css">
     <link href="http://images-style.cnlive.it/Storage/Assets/Crops/55338/112/63030/Boo_650x447.jpg">
     <link href="./Animais Cadastrados_files/css" rel="stylesheet">
     <link href="./Animais Cadastrados_files/css(1)" rel="stylesheet">
     <link rel="stylesheet" href="estiloCamillie.css">
     <link rel="stylesheet" href="AnimaisCad.css">
-
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="cadastrodono.css">
+    <link rel="stylesheet" href="CadastroAnimais.css">
 
 </head>
     <body class="center">
@@ -19,14 +21,12 @@
                     <div class="coluna col2">
                         <img src="imagens/logo_biodog.png" alt="BIODOG" border="0">
                     </div>
-                    <div class="coluna col8">
+                    <div class="coluna col10">
                         <nav>
                             <ul class="menu inline sem-marcador">
                                 <li><a href="menu.html">Menu</a></li>
-                                <li><a href="empresas.html">Calendário</a></li>
-                                <li><a href="Agenda.html">Agenda</a></li>
-                                <li><a href="vermais.html">Ver mais...</a></li>
-                                <li><a href="contato.html">Cadastro</a></li>
+                                <li><a href="login_cliente.html">Login</a></li>
+                                <li><a href="precos.html">Tabela de Preços</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -35,16 +35,18 @@
         </div>
 <body>
 
+<br><br><br>
 
   <div class="container" >
   
     <a class="links" id="paralogin"></a>
      
-    <div class="content">      
-   
-      <div id="login">
-        <form method="post" action=""> 
-          <h1>Login</h1> 
+    <div class="content">
+<fieldset>
+      <table id="login">
+        <form method="post" action="">
+            <legend><b>Login</b></legend>
+            <table cellspacing="5">
           <p> 
 	    <label for="nome_login"> E-mail </label>
             <input id="nome_login" name="nome_login" required="required" type="text">
@@ -57,7 +59,7 @@
           </p>
                </tr>
           <p> 
-            <input type="submit" value="Enter" /> 
+            <input type="submit" align="center"  value="Enter" />
           </p>
 		 
           <p> 
@@ -70,24 +72,23 @@
             <label for="Nao sou um Robo">Nao sou um Robo</label>
           </p>
            
-          <p class="link">
+          <p class="link" align="center">
            
-            <a href="#paracadastro">Cadastre-se</a>
+            <a href="cadastrodono.html">Cadastre-se</a>
             </p>
 
-			
-		   
-		    
         </form>
-      </div>  </div>
     </div>
-		    
-          <p class="back">
-           
-      
-			<a href="#paracadastro">Voltar ao menu</a>
-			
-          </p>
+      <p class="back" align="center">
+          <a href="menu.html">Voltar ao menu</a>
+      </p>
+      </table>
+</fieldset>
+
+  </div>
+    </div>
+
+
 		   
         </body> 	     
  </body>  
