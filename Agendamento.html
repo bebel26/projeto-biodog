@@ -11,35 +11,35 @@
     <link rel="stylesheet" href="CadastroAnimais.css">
 </head>
     <body class="center">
-        <div class="header">
-            <div class="linha">
-                <header>
-                    <div class="coluna col2">
-                        <img src="imagens/logo_biodog.png" alt="BIODOG" border="0">
+            <div class="header">
+                <div class="linha">
+                    <div class="header">
+                        <div class="linha">
+                            <header>
+                                <div class="coluna col2">
+                                    <img src="imagens/logo_biodog.png" alt= "BIODOG" border="0">
+                                </div>
+                                <div class="coluna col10">
+                                    <nav>
+                                        <ul class="menu inline sem-marcador">
+                                            <li><a href="menu.html">Menu</a></li>
+                                            <li><a href="login_cliente.html">Login</a></li>
+                                            <li><a href="precos.html">Tabela de Preços</a></li>
+                                            <li><a href="Agendamento.html">Agendamento</a></li>
+                                            <li><a href="calendariocliente.html">Calendário</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </header>
+                        </div>
                     </div>
-                    <div class="coluna col8">
-                        <nav>
-                            <ul class="menu inline sem-marcador">
-                                <li><a href="menu.html">Menu</a></li>                             
-                                <li><a href="cadastrodono.html">Cadastrar Dono</a></li>
-                                 <li><a href="CadastroAnimais.html">Cadastrar Animal</a></li>
-                                <li><a href="Agendamento.html">Agendamento</a></li>
-                                <li><a href="calendario_cliente.html">Calendário</a></li>
-                                <li><a href="precos.html">Tabela de Preços</a></li>
-                                <li><a href="login_cliente.html">Login</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-        </div>
     <body>
         <div id="Quadro">
-        <h2> AGENDAMENTO </h2>
-        <br>
-        <br>
-        <br>
-        <h4> Animal : </h4>
+            <br><br>
+            <fieldset>
+            <legend><h1><b> AGENDAMENTO </b></h1></legend>
+            <table cellspacing="10">
+        <h3> Animal : </h3>
         <select>
                 <option value="Qual Animal Atenderemos hoje?">Qual animal Atenderemos hoje?</option>
                 <option value="Sasuke">Sasuke</option>
@@ -48,7 +48,7 @@
               </select>
               <br>
               <br>
-              <h4>Responsáveis Autorizados a Retirar</h4>
+              <h3>Responsáveis Autorizados a Retirar</h3>
               <select>
                     <option value="">Escolha um ou mais Responsáveis</option>
                     <option value="Itachi">Itachi</option>
@@ -56,10 +56,10 @@
                     <option value="Vegeta">Vegeta</option>
                   </select>
                 </div>
+        <br>
+        <br>
                   <div id="Rexona">
                 <h3> Leva e Traz?</h3>
-                <br>
-                <br>
                 <br>
                 <input type="checkbox" name="Sim" value="Sim, por Favor"> Sim, Por Favor
                 <input type="checkbox" name="Não" value="Não, Obrigado"> Não, Obrigado
@@ -70,35 +70,35 @@
                 <div id="Vida">
                     <h3>Observações</h3>
                     <br>
-                    <br>
-                    <br>
-                <input type="text" size="80%" name="Tente" >
+                <input type="text" size="50%"name="tente">
         </div>
         <div id="Notebook">
             <h2>Hoje -- 22/06/2019</h2>
-            <h4>Horário</h4>
+            <h3>Horário</h3>
             <select>
                     <option value="Horatop">9h00min</option>
                     <option value="Horadepega">9h40min</option>
                     <option value="Horadeda">10h20min</option>
                     <option value="Horaboa">11h00min</option>
                   </select>
-            <h4> Serviço </h4>
+            <h3> Serviço: </h3>
                   <select>
                         <option value="Serv1">Escolha o Serviço</option>
                         <option value="Serv2">Tosa</option>
                         <option value="Serv3">Banho</option>
                         <option value="Serv4">Banho e Tosa</option>
                       </select>
-        </div>
-        <div id="OdeioMinhaVida">
+        </div><div id="OdeioMinhaVida">
             <input type="submit" value="Confirmar"> &nbsp; &nbsp; &nbsp;
             <input type="button" value="Cancelar">
         </div>
+        </fieldset>
+</table>
+</div>  <br>
         <div class="footer">
             <div class="linha">
                 <footer>
-                    <div class="coluna col12">
+                    <div class="coluna col11">
                         <span> Empresa BIODOG </span>
                     </div>
                 </footer>
