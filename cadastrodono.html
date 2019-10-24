@@ -7,23 +7,24 @@
      <link href="./vermais_files/css(1)" rel="stylesheet">
      <link rel="stylesheet" href="estiloCamillie.css">
      <link rel="stylesheet" href="cadastrodono.css">
+    <link rel="stylesheet" href="CadastroAnimais.css">
  </head>
 <div class="header">
           <div class="linha">
+             <div class="header">
+          <div class="linha">
               <header>
-                  <div class="coluna col4">
+                  <div class="coluna col2">
                       <img src="imagens/logo_biodog.png" alt= "BIODOG" border="0">
                   </div>
-                  <div class="coluna col8">
+                  <div class="coluna col10">
                       <nav>
                           <ul class="menu inline sem-marcador">
-                                <li><a href="menu.html">Menu</a></li>                             
-                                <li><a href="cadastrodono.html">Cadastrar Dono</a></li>
-                                 <li><a href="CadastroAnimais.html">Cadastrar Animal</a></li>
-                                <li><a href="Agendamento.html">Agendamento</a></li>
-                                <li><a href="calendario_cliente.html">Calendário</a></li>
-                                <li><a href="precos.html">Tabela de Preços</a></li>
-                                <li><a href="login_cliente.html">Login</a></li>
+                              <li><a href="menu.html">Menu</a></li>
+                              <li><a href="login_cliente.html">Login</a></li>
+                              <li><a href="precos.html">Tabela de Preços</a></li>
+                              <li><a href="Agendamento.html">Agendamento</a>
+                              </li><li><a href="calendariocliente.html">Calendário</a></li>
                             </ul>
                       </nav>
                   </div>
@@ -34,7 +35,8 @@
 
 
  <body>
-        
+     <br>
+     <br>
   <h1><b>Cadastro</b></h1> 
 
 <!-- DADOS PESSOAIS-->
@@ -60,9 +62,7 @@
   <tr>
    <td>
     <label><b> Nascimento:</b> </label>
-    <input type="text" name="dia" size="2" maxlength="2" value="dd"> 
-   <input type="text" name="mes" size="2" maxlength="2" value="mm"> 
-   <input type="text" name="ano" size="4" maxlength="4" value="aaaa">
+    <input type="date" name="DataDeNascimento" value="__/__/____">
    </td>
    <td>
 <label for="rg"><b>RG:</b> </label>
@@ -123,7 +123,12 @@
             <option value="Leco">Mingau</option>
             <option value="Lia">Lia</option>
           </select>
+          <p class="link" align="right" >
+              <a href="CadastroAnimais.html">Cadastre seu animalzinho</a>
+          </p>
       </td>
+
+
   </tr>
  </table>
 </fieldset>
